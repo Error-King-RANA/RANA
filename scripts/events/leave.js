@@ -13,14 +13,14 @@ module.exports.run = async function({ api, event, Users, Threads }) {
 	const { threadID } = event;
 	const data = global.data.threadData.get(parseInt(threadID)) || (await Threads.getData(threadID)).data;
 	const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
-	const type = (event.author == event.logMessageData.leftParticipantFbId) ? " আহারে চলে গেলো 😺" : "Kicked by Administrator";
+	const type = (event.author == event.logMessageData.leftParticipantFbId) ? " আহারে চলে গেলো 😺" : "𝗬𝗼𝘂 𝗱𝗼𝗻'𝘁 𝗱𝗲𝘀𝗲𝗿𝘃𝗲 𝘁𝗼 𝗯𝗲 𝗶𝗻 𝘁𝗵𝗶𝘀 𝗴𝗿𝗼𝘂𝗽";
 	const path = join(__dirname, "nayan", "leaveGif");
 	const gifPath = join(path, `l.gif`);
 	var msg, formPush
 
 	if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-	(typeof data.customLeave == "undefined") ? msg = "কিরে {name} কোথায় পালাস, আমি রানা বট থাকতে পালাতে পারবি না 😉 reason.\n\n{type} " : msg = data.customLeave;
+	(typeof data.customLeave == "undefined") ? msg = "𝗕𝘆𝗲 𝗕𝘆𝗲 𝗜𝗱𝗼𝗹 {name}  \n 𝗥𝗲𝗮𝘀𝗼𝗻:\n\n{type} " : msg = data.customLeave;
 	msg = msg.replace(/\{name}/g, name).replace(/\{type}/g, type);
 
 	if (existsSync(gifPath)) formPush = { body: msg, attachment: createReadStream(gifPath) }
