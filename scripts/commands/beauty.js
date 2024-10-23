@@ -2,6 +2,7 @@ module.exports = {
 	config: {
 		name: "beauty",
 		version: "1.0",
+		prefix: "true",
 		author: "Samir",
 		role: 0,
 		category: "fun",
