@@ -1,14 +1,14 @@
 const fs = require("fs");
 module.exports = {
   config:{
-	name: "npx2",
+	name: "npx4",
         version: "1.0.1",
         prefix: false,
 	permssion: 0,
 	credits: "Mohammad Rana", 
 	description: "Fun",
 	category: "no prefix",
-	usages: "⏰",
+	usages: "😒",
         cooldowns: 5, 
 },
 
